@@ -20,7 +20,7 @@ module.exports = (robot) ->
     if not count
       count = if (msg.match.input.match /bomb/i)? then 5 else 1
 
-    msg.http("http://www.reddit.com/r/pugs.json?sort=top&t=week")
+    msg.http("https://www.reddit.com/r/pugs.json?sort=top&t=week")
     .get() (err, res, body) ->
       try
         pugs = getPugs(body, count)
